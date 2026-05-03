@@ -29,3 +29,11 @@ backtest:
 
 paths:
   output_dir: "outputs"
+
+
+fof:
+  fund_returns_path: "outputs/fund_returns.csv"  # columns: date, fund_a, fund_b, ...
+  rebalance_freq: "M"         # M/W/Q
+  lookback_days: 126
+  weight_method: "inv_vol"    # equal / inv_vol / mean_var
+  transaction_cost: 0.0005
