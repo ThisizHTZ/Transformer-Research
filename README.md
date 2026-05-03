@@ -105,3 +105,30 @@ outputs/figures/
 ├── daily_turnover.png
 └── visual_report_summary.txt
 ```
+
+
+## FOF (Fund of Funds) module
+
+You can run a simple FOF allocation backtest based on historical fund returns:
+
+```bash
+python fof.py --config config.yaml
+```
+
+Prepare `outputs/fund_returns.csv` with schema:
+
+```text
+date,fund_a,fund_b,fund_c
+2024-01-02,0.0012,-0.0003,0.0008
+...
+```
+
+Supported weighting methods (`config.yaml -> fof.weight_method`):
+- `equal`: equal weight
+- `inv_vol`: inverse volatility weighting
+- `mean_var`: long-only mean-variance (regularized)
+
+Outputs:
+- `outputs/fof_backtest_daily.csv`
+- `outputs/fof_weights_daily.csv`
+- `outputs/fof_metrics.json`
